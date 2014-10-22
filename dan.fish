@@ -6,8 +6,16 @@ test -s /Users/dan/.nvm-fish/nvm.fish; and source /Users/dan/.nvm-fish/nvm.fish
 
 
 # ALIASES
+alias vmstart 'VBoxManage startvm "testserver" --type headless'
+alias vmstop 'VBoxManage controlvm "testserver" poweroff'
+alias sshvm 'ssh 192.168.56.10 -l rsyncadmin'
+alias cksql 'mysql -h 10.100.100.150 -u dan.eagle -p ck'
+alias vmfix 'sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist'
+alias vmnfs 'mount -o nolocks,locallocks -t nfs 192.168.56.10:/var/www/git-repos /Users/dan/Development/nfs'
 alias vtop 'vtop --theme=wizard'
-
+alias sshva '/Users/dan/ck-repos/ckvm vagrant ssh'
+alias vagup '/Users/dan/ck-repos/ckvm vagrant up'
+alias vaghalt '/Users/dan/ck-repos/ckvm vagrant halt'
 
 # PROMPT
 set -g __fish_git_prompt_show_informative_status 1
